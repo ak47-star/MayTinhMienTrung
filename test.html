@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+  <div id="app">
+  	<h1>Hello world</h1>
+  	<p>
+  	  <router-link to="/foo">Go to foo</router>
+      <router-link to="far">Go to far</router-link>
+  	</p>
+  	<router-view></router-view>
+  </div>
+</body>
+</html>
+<script type="text/javascript">
+
+	const user = {
+		template: "<div>User {{ $route.params.id }}</div>"
+	}
+
+	cost router = new VueRouter({
+		routers: [
+          { path: '/user/:id', component: User }
+		]
+	});
+	const app = new Vue({ router }).$mount('#app')
+
+</script>
